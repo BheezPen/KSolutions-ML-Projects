@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 57,
+   "execution_count": 61,
    "id": "fb5da908-2b11-4825-b0da-9a8da5e6da47",
    "metadata": {},
    "outputs": [
@@ -12,13 +12,15 @@
        "<module 'sklearn.datasets' from 'C:\\\\Users\\\\DELL\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python311\\\\Lib\\\\site-packages\\\\sklearn\\\\datasets\\\\__init__.py'>"
       ]
      },
-     "execution_count": 57,
+     "execution_count": 61,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
     "from sklearn.linear_model import LogisticRegression #Import the algorithm to build the model\n",
+    "# Recall: Logistics Regressions is one of the algorithm for CLassification\n",
+    "\n",
     "from sklearn.datasets import load_wine #Import the load_winedataset whiich is builtin in sklearn already\n",
     "\n",
     "from sklearn.model_selection import train_test_split\n",
@@ -524,13 +526,56 @@
    "source": [
     "# Calculting Accuracy Sore\n",
     "accuracy = accuracy_score(prediction,y_test)\n",
-    "print(accuracy)"
+    "print(accuracy) "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 63,
+   "id": "c3f5110e-ec54-4101-9427-43f084eaa2d4",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "              precision    recall  f1-score   support\n",
+      "\n",
+      "           0       0.95      1.00      0.97        18\n",
+      "           1       1.00      0.95      0.98        22\n",
+      "           2       1.00      1.00      1.00        14\n",
+      "\n",
+      "    accuracy                           0.98        54\n",
+      "   macro avg       0.98      0.98      0.98        54\n",
+      "weighted avg       0.98      0.98      0.98        54\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Out accuracy beign 0.98 means we have 98$ accuracy\n",
+    "\n",
+    "# now, next is to get the classification report\n",
+    "# I have already import the ca=lassification function from sklearn.metrics as in cell 1\n",
+    "classification = classification_report(prediction,y_test)\n",
+    "\n",
+    "print(classification)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a59dc4f6-430f-4f6d-ad14-6def814977ea",
+   "metadata": {},
+   "source": [
+    "### SO now this is the report of our model from the data used. \n",
+    "### Lets explain:\n",
+    "- precision means \n"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "c3f5110e-ec54-4101-9427-43f084eaa2d4",
+   "id": "a881b097-5fad-4040-bd6a-bac5b8e778b8",
    "metadata": {},
    "outputs": [],
    "source": []
